@@ -26,7 +26,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
 .card {
@@ -53,12 +53,13 @@ main {
     border-radius: 75px;
     border: 2px solid #000;
     transition: .2s;
+    box-shadow: -3px 3px 0px rgb(19, 91, 163), -4px 4px 0px rgb(8, 40, 71), -9px 9px 5px rgba(0, 0, 0, 0.2);
 }
 
 .circle:hover {
-    transform: translate(6px, -6px);
-    box-shadow: -3px 3px 0px rgb(19, 91, 163), -4px 4px 0px rgb(8, 40, 71), -9px 9px 5px rgba(0, 0, 0, 0.2);
     transition: .5s;
+    transform: translate(-6px, 6px);
+    box-shadow: none;
     cursor: pointer;
 }
 
@@ -260,6 +261,14 @@ main {
     font-size: 18px;
     font-weight: 800;
     font-family: 'Oxanium', cursive;
+    box-shadow: -3px 3px 0px #000;
+    transition: .2s;
+}
+
+.search__input:has(> input:focus) {
+    box-shadow: none;
+    transform: translate(-3px, 3px);
+    transition: .2s;
 }
 
 .search__input input {

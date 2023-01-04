@@ -26,6 +26,7 @@ const renderPokemon = async (pokemon) => {
             $(".info__badges").append('<span class="badge badge-'+ aux +'">'+ aux +'</span>');
         }
         $('#searchInput').val('');
+        pokemonIndex = data.id;
     } else {
         $(".pokemon__name").html('Not Found');
         $(".pokemon__height").html("- m");
@@ -52,7 +53,7 @@ $('.button__next').click(function (event) {
 $('.search__input').submit(function (e) { 
     e.preventDefault();
     renderPokemon($('#searchInput').val());
+    $("#searchInput").blur();
 });
-
 
 renderPokemon('1');
